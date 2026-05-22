@@ -8,7 +8,10 @@ const GlobePage = () => {
 
   return (
     <div className="h-screen w-full relative overflow-hidden bg-black">
-      <GlobeScene onMarkerSelect={(marker) => setSelectedEvent(marker)} />
+      <GlobeScene
+        onMarkerSelect={(marker) => setSelectedEvent(marker)}
+        selectedPosition={selectedEvent?.pos}
+      />
 
       {/* UI Overlay */}
       <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-12">
@@ -33,10 +36,6 @@ const GlobePage = () => {
             <div className="p-4 glass border border-white/5 text-right">
               <p className="text-[10px] font-mono text-gold tracking-[0.2em] mb-1 uppercase">System Status</p>
               <p className="text-[10px] font-mono text-white/40 uppercase">ORBIT_LOCKED // DATA_SYNC_98%</p>
-            </div>
-            <div className="flex gap-2">
-              <button className="p-3 glass hover:bg-gold/10 transition-colors pointer-events-auto"><Crosshair size={18} className="text-gold" /></button>
-              <button className="p-3 glass hover:bg-gold/10 transition-colors pointer-events-auto"><MapIcon size={18} className="text-gold" /></button>
             </div>
           </motion.div>
         </div>

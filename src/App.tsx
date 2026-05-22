@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import { useLenis } from './hooks/useLenis';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from './components/common/PageTransition';
+import AmbientBackground from './components/common/AmbientBackground';
 
 // Lazy load pages
 const Landing = lazy(() => import('./pages/Landing'));
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="bg-black min-h-screen selection:bg-gold selection:text-black">
+      <AmbientBackground />
       <Navbar />
       <main>
         <Suspense fallback={<div className="h-screen w-screen bg-black flex items-center justify-center text-gold font-cinzel text-2xl animate-pulse tracking-[0.3em]">INITIATING ARCHIVE...</div>}>
